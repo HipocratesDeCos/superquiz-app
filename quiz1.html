@@ -10,57 +10,68 @@
   <div class="container">
     <header>
       <h1>Quiz 1: Introducción al PGC</h1>
-      <p>Responde las siguientes preguntas</p>
+      <p>Responde las siguientes preguntas sobre el Plan General de Contabilidad</p>
     </header>
 
     <main>
-      <div class="opciones">
-  <input type="checkbox" id="q1a" value="A">
-  <label for="q1a">Marco conceptual de la contabilidad</label>
-</div>
+      <!-- Pregunta 1 -->
+      <div class="pregunta">
+        <p><strong>1. ¿Cuáles de las siguientes partes del Plan General de Contabilidad (PGC) son de obligado cumplimiento?</strong></p>
+        <div class="opciones">
+          <input type="checkbox" id="q1a" value="A">
+          <label for="q1a">Marco conceptual de la contabilidad</label>
+        </div>
+        <div class="opciones">
+          <input type="checkbox" id="q1b" value="B">
+          <label for="q1b">Normas de registro y valoración</label>
+        </div>
+        <div class="opciones">
+          <input type="checkbox" id="q1c" value="C">
+          <label for="q1c">Cuadro de cuentas</label>
+        </div>
+        <div class="opciones">
+          <input type="checkbox" id="q1d" value="D">
+          <label for="q1d">Cuentas anuales (balance, cuenta de pérdidas y ganancias, etc.)</label>
+        </div>
+      </div>
 
-<div class="opciones">
-  <input type="checkbox" id="q1b" value="B">
-  <label for="q1b">Normas de registro y valoración</label>
-</div>
-      <div class="opciones">
-  <input type="checkbox" id="q1a" value="A">
-  <label for="q1a">Cuadro de cuentas</label>
-</div>
+      <!-- Pregunta 2 -->
+      <div class="pregunta">
+        <p><strong>2. ¿Qué grupos del cuadro de cuentas forman la cuenta de pérdidas y ganancias?</strong></p>
+        <div class="opciones">
+          <input type="checkbox" id="q2a" value="A">
+          <label for="q2a">Grupo 6</label>
+        </div>
+        <div class="opciones">
+          <input type="checkbox" id="q2b" value="B">
+          <label for="q2b">Grupo 7</label>
+        </div>
+        <div class="opciones">
+          <input type="checkbox" id="q2c" value="C">
+          <label for="q2c">Grupo 8</label>
+        </div>
+        <div class="opciones">
+          <input type="checkbox" id="q2d" value="D">
+          <label for="q2d">Grupo 9</label>
+        </div>
+      </div>
 
-<div class="opciones">
-  <input type="checkbox" id="q1b" value="B">
-  <label for="q1b">Cuentas anuales</label>
-</div>
-<div class="opciones">
-  <input type="checkbox" id="q1a" value="A">
-  <label for="q1a">Grupo 6</label>
-</div>
+      <!-- Botón para verificar -->
+      <button class="boton" onclick="verificar()" style="margin: 20px auto; display: block;">
+        Verificar Respuestas
+      </button>
 
-<div class="opciones">
-  <input type="checkbox" id="q1b" value="B">
-  <label for="q1b">Grupo 7</label>
-</div>
-      <div class="opciones">
-  <input type="checkbox" id="q1a" value="A">
-  <label for="q1a">Grupo 8</label>
-</div>
-
-<div class="opciones">
-  <input type="checkbox" id="q1b" value="B">
-  <label for="q1b">CGrupo 9</label>
-</div>      
-
-      <button class="boton" onclick="verificar()">Verificar Respuestas</button>
-
-      <div id="resultado" style="margin-top: 20px; padding: 15px; display: none; background: #f0f7ff; border-radius: 8px;"></div>
+      <!-- Resultado -->
+      <div id="resultado" style="margin-top: 20px; padding: 15px; display: none; background: #f0f7ff; border-radius: 8px; line-height: 1.6;"></div>
     </main>
 
+    <!-- Botón de regreso -->
     <footer>
-      <a href="index.html" class="boton" style="margin: 10px auto; width: 200px;">Volver al Inicio</a>
+      <a href="index.html" class="boton" style="width: 200px; margin: 20px auto;">Volver al Inicio</a>
     </footer>
   </div>
 
+  <!-- Carga el script común -->
   <script src="script.js"></script>
 </body>
 </html>
