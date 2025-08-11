@@ -1,7 +1,7 @@
 /* Botones de respuesta con degradado azul-lila */
 .opciones label {
   display: block;
-  padding: 16px 24px;
+  padding: 16px 12px;
   background: linear-gradient(135deg, #0073e6, #a64dff);
   color: white;
   font-size: 1.05em;
