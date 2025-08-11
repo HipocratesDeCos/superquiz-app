@@ -1,7 +1,7 @@
 function verificar() {
   const respuestasCorrectas = {
-    1: ['A', 'B', 'D'],
-    2: ['A', 'B']
+    1: ['A', 'B', 'D'], // Pregunta 1
+    2: ['A', 'B']        // Pregunta 2
   };
 
   const justificaciones = {
@@ -31,7 +31,7 @@ function verificar() {
   });
 
   const contenedor = document.getElementById('resultado');
-  contenedor.innerHTML = `<strong>Resultado: ${puntaje} de 2 acertadas.</strong><br><br>${resultadoHTML}`;
+  contenedor.innerHTML = `<strong>Resultado: ${puntaje} de ${Object.keys(respuestasCorrectas).length} acertadas.</strong><br><br>${resultadoHTML}`;
   contenedor.style.display = 'block';
 }
 
