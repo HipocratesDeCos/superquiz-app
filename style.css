@@ -1,82 +1,45 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
-  color: #333;
-  line-height: 1.6;
-  min-height: 100vh;
-  padding: 20px;
-}
-
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  justify-content: space-between;
-}
-
-header {
-  margin: 40px 0;
-}
-
-header h1 {
-  font-size: 2em;
-  color: #2c3e50;
-  margin-bottom: 10px;
-}
-
-header p {
-  color: #666;
-  font-size: 1.1em;
-}
-
-.botones-container {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin: 20px 0;
-}
-
-.boton {
+/* Estilo para las opciones de respuesta (como botones degradados) */
+.opciones label {
   display: block;
-  padding: 18px 24px;
-  background: linear-gradient(135deg, #0073e6, #a64dff);
+  padding: 16px 24px;
+  background: linear-gradient(135deg, #0073e6, #a64dff); /* Azul → Lila */
   color: white;
-  font-size: 1.1em;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 12px;
+  font-size: 1.05em;
+  font-weight: 500;
+  text-align: left;
+  border-radius: 10px;
+  cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 115, 230, 0.2);
+  box-shadow: 0 3px 8px rgba(0, 115, 230, 0.15);
+  margin: 8px 0;
+  position: relative;
 }
 
-.boton:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(0, 115, 230, 0.3);
+/* Efecto hover (al pasar el ratón) */
+.opciones label:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0, 115, 230, 0.25);
   background: linear-gradient(135deg, #0066cc, #9d35e0);
 }
 
-footer {
-  font-size: 0.9em;
-  color: #888;
-  margin-top: 40px;
-  padding: 20px 0;
+/* Quitar el checkbox visualmente (pero mantenerlo funcional) */
+.opciones input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
 }
 
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 1.6em;
-  }
-  .boton {
-    padding: 16px 20px;
-    font-size: 1em;
-  }
+/* Estado activo (cuando se selecciona) */
+.opciones input[type="checkbox"]:checked + label {
+  background: linear-gradient(135deg, #06bd74, #66ff99); /* Verde degradado */
+  box-shadow: 0 5px 12px rgba(6, 189, 116, 0.3);
+  transform: translateY(0);
+}
+
+/* Opcional: si prefieres mantener el checkbox oculto pero funcional para JavaScript */
+.opciones input[type="checkbox"]:focus + label {
+  outline: 2px solid #0073e6;
+  outline-offset: 2px;
 }
