@@ -1,45 +1,56 @@
-/* Estilo para las opciones de respuesta (como botones degradados) */
+/* Estilo para el contenedor de la pregunta */
+.pregunta {
+  margin: 25px 0;
+  padding: 0;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+.pregunta p {
+  padding: 16px 20px;
+  background: #f8f9ff;
+  font-size: 1.1em;
+  color: #2c3e50;
+  font-weight: 500;
+  border-bottom: 1px solid #e0e0e0;
+  margin: 0;
+}
+
+/* Botones de respuesta con degradado azul-lila */
 .opciones label {
   display: block;
   padding: 16px 24px;
-  background: linear-gradient(135deg, #0073e6, #a64dff); /* Azul → Lila */
+  background: linear-gradient(135deg, #0073e6, #a64dff);
   color: white;
   font-size: 1.05em;
   font-weight: 500;
   text-align: left;
-  border-radius: 10px;
+  border-radius: 0;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 3px 8px rgba(0, 115, 230, 0.15);
-  margin: 8px 0;
-  position: relative;
+  margin: 0;
 }
 
-/* Efecto hover (al pasar el ratón) */
 .opciones label:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 12px rgba(0, 115, 230, 0.25);
-  background: linear-gradient(135deg, #0066cc, #9d35e0);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 115, 230, 0.2);
 }
 
-/* Quitar el checkbox visualmente (pero mantenerlo funcional) */
+/* Estado cuando se selecciona una opción */
 .opciones input[type="checkbox"] {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
+  display: none;
 }
 
-/* Estado activo (cuando se selecciona) */
 .opciones input[type="checkbox"]:checked + label {
-  background: linear-gradient(135deg, #06bd74, #66ff99); /* Verde degradado */
-  box-shadow: 0 5px 12px rgba(6, 189, 116, 0.3);
+  background: linear-gradient(135deg, #06bd74, #66ff99) !important;
+  box-shadow: 0 4px 12px rgba(6, 189, 116, 0.3);
   transform: translateY(0);
+  font-weight: 600;
 }
 
-/* Opcional: si prefieres mantener el checkbox oculto pero funcional para JavaScript */
-.opciones input[type="checkbox"]:focus + label {
-  outline: 2px solid #0073e6;
-  outline-offset: 2px;
+/* Separación entre opciones */
+.opciones label + label {
+  border-top: 1px solid rgba(255,255,255,0.2);
 }
