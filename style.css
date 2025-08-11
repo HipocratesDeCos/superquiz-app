@@ -1,32 +1,15 @@
-/* Botones de respuesta con degradado azul-lila */
 .opciones label {
   display: block;
-  padding: 16px 12px;
+  max-width: 450px;           /* Limita el ancho */
+  margin: 8px auto;           /* Centra el botón */
+  padding: 14px 16px;         /* Reduce el relleno lateral */
   background: linear-gradient(135deg, #0073e6, #a64dff);
   color: white;
   font-size: 1.05em;
   font-weight: 500;
-  text-align: left;
+  text-align: center;         /* Texto centrado (opcional) */
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin: 8px 0;
   box-shadow: 0 2px 8px rgba(0, 115, 230, 0.15);
-}
-
-.opciones label:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 115, 230, 0.25);
-}
-
-/* Ocultar el checkbox real */
-.opciones input[type="checkbox"] {
-  display: none;
-}
-
-/* Estilo cuando se selecciona la opción */
-.opciones input[type="checkbox"]:checked + label {
-  background: linear-gradient(135deg, #06bd74, #66ff99) !important;
-  box-shadow: 0 4px 12px rgba(6, 189, 116, 0.3);
-  font-weight: 600;
 }
