@@ -1,10 +1,9 @@
-<!-- Forzar reconstrucción -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SuperQuiz - Contabilidad Financiera</title>
+  <title>SuperQuiz: Contabilidad Financiera</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -15,19 +14,16 @@
     </header>
 
     <main class="botones-container">
-      <a href="quiz1.html" class="boton">Quiz 1: Introducción al PGC</a>
-      <a href="quiz2.html" class="boton">Quiz 2: Inmovilizado, Arrendamientos y Activo Financiero</a>
-      <a href="quiz3.html" class="boton">Quiz 3: Activo Corriente: Existencias, Periodificaciones y Gestión de Cobro</a>
-      <a href="quiz4.html" class="boton">Quiz 4: Patrimonio Neto</a>
+      <!-- Botones para cada quiz -->
+      <button class="boton" onclick="window.location.href='quiz1.html'">Quiz 1: Introducción al PGC</button>
+      <button class="boton" onclick="window.location.href='quiz2.html'">Quiz 2: Inmovilizado, Arrendamientos y Activo Financiero</button>
+      <button class="boton" onclick="window.location.href='quiz3.html'">Quiz 3: Activo Corriente: Existencias, Periodificaciones y Gestión de Cobro</button>
+      <button class="boton" onclick="window.location.href='quiz4.html'">Quiz 4: Patrimonio Neto</button>
     </main>
 
     <footer>
-      &copy; <span id="year"></span> - Todos los derechos reservados
+      &copy; 2025 - Todos los derechos reservados
     </footer>
   </div>
-
-  <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
