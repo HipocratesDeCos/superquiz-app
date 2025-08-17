@@ -3,7 +3,7 @@ async function loadQuizMenu() {
     try {
         const response = await fetch('quizzes.json');
         const quizzes = await response.json();
-        const quizList = document.querySelector('.quiz-list');
+        const quizList = document.getElementById('quiz-list');
 
         quizList.innerHTML = ''; // Limpiar botones anteriores
 
