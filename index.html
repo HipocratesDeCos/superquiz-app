@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperQuiz - Contabilidad Financiera</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header principal -->
+        <div class="header">
+            <h1>SuperQuiz</h1>
+            <p>Contabilidad Financiera</p>
+        </div>
+
+        <!-- Página principal (menú de inicio) -->
+        <div id="main-page" class="page active">
+            <div class="main-menu">
+                <h2>Bienvenido a SuperQuiz</h2>
+                <div class="instructions">
+                    <p>🎯 Selecciona "Comenzar Quiz" para acceder a todos los temas disponibles de Contabilidad Financiera.</p>
+                </div>
+                <div class="main-buttons">
+                    <button class="btn" onclick="showPage('menu-page')">🚀 Comenzar Quiz</button>
+                    <button class="btn" id="home-btn">🏠 Inicio</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Página del menú de quizzes -->
+        <div id="menu-page" class="page">
+            <div class="quiz-menu">
+                <h2>Selecciona un Tema</h2>
+                <div class="quiz-list">
+                    <!-- Los botones se cargarán automáticamente desde quizzes.json -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Página del quiz activo -->
+        <div id="quiz-container" class="page">
+            <div class="quiz-container">
+                <h2 id="quiz-title">Título del Quiz</h2>
+                <div class="instructions">
+                    <p>📖 Lee cada pregunta cuidadosamente y selecciona la(s) respuesta(s) correcta(s). Puedes marcar varias opciones si es necesario.</p>
+                </div>
+                <div id="questions-container">
+                    <!-- Las preguntas se cargarán dinámicamente -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Contenedor de retroalimentación -->
+        <div id="feedback-container" class="results" style="display: none;">
+            <h3 id="feedback-title">Resultados</h3>
+            <div class="score" id="feedback-score">0/0 (0%)</div>
+            <div class="message" id="feedback-message">Mensaje de retroalimentación</div>
+            <button class="btn" onclick="restartQuiz()">🔄 Reintentar Quiz</button>
+        </div>
+
+        <!-- Botón para volver al menú (visible solo en quiz) -->
+        <button id="back-button" class="btn" style="display: none; margin: 20px auto;">
+            ← Volver al Menú
+        </button>
+    </div>
+
+    <!-- Modal "Saber más" -->
+    <div id="saberMasModal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-title">💡 Información Adicional</div>
+            <div id="saberMasContent">
+                <!-- Contenido dinámico -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Variables globales para JavaScript -->
+    <script>
+        let correctCount = 0;
+        let totalQuestions = 0;
+        let answeredAll = false;
+        let quizData = null;
+    </script>
+
+    <!-- Archivo JavaScript principal -->
+    <script src="main.js"></script>
+</body>
+</html>
