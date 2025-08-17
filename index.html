@@ -3,88 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SuperQuiz - Contabilidad Financiera</title>
+    <title>Mi Aprendizaje Activo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Header principal -->
-        <div class="header">
-            <h1>SuperQuiz</h1>
-            <p>Contabilidad Financiera</p>
-        </div>
+    <header>
+        <h1>Mi Aprendizaje Activo</h1>
+    </header>
 
-        <!-- Página principal (menú de inicio) -->
-        <div id="main-page" class="page active">
-            <div class="main-menu">
-                <h2>Bienvenido a SuperQuiz</h2>
-                <div class="instructions">
-                    <p>🎯 Selecciona "Comenzar Quiz" para acceder a todos los temas disponibles de Contabilidad Financiera.</p>
-                </div>
-                <div class="main-buttons">
-                    <button class="btn" onclick="showPage('menu-page')">🚀 Comenzar Quiz</button>
-                    <button class="btn" id="home-btn">🏠 Inicio</button>
-                </div>
+    <main>
+        <section id="content-creation">
+            <h2>Crear Contenido</h2>
+            <div class="content-form">
+                <h3>Añadir Quiz</h3>
+                <textarea id="new-quiz-question" placeholder="Escribe la pregunta"></textarea>
+                <textarea id="new-quiz-answer" placeholder="Escribe la respuesta correcta"></textarea>
+                <button id="add-quiz-btn">Añadir Quiz</button>
             </div>
-        </div>
-
-        <!-- Página del menú de quizzes -->
-        <div id="menu-page" class="page">
-            <div class="quiz-menu">
-                <h2>Selecciona un Tema</h2>
-                <div class="quiz-list">
-                    <!-- Los botones se cargarán automáticamente desde quizzes.json -->
-                </div>
+            <div class="content-form">
+                <h3>Añadir Flashcard</h3>
+                <textarea id="new-flashcard-front" placeholder="Escribe el anverso (pregunta/concepto)"></textarea>
+                <textarea id="new-flashcard-back" placeholder="Escribe el reverso (respuesta/definición)"></textarea>
+                <button id="add-flashcard-btn">Añadir Flashcard</button>
             </div>
-        </div>
-
-        <!-- Página del quiz activo -->
-        <div id="quiz-container" class="page">
-            <div class="quiz-container">
-                <h2 id="quiz-title">Título del Quiz</h2>
-                <div class="instructions">
-                    <p>📖 Lee cada pregunta cuidadosamente y selecciona la(s) respuesta(s) correcta(s). Puedes marcar varias opciones si es necesario.</p>
-                </div>
-                <div id="questions-container">
-                    <!-- Las preguntas se cargarán dinámicamente -->
-                </div>
+            <div class="content-form">
+                <h3>Mis Notas</h3>
+                <textarea id="notes-area" placeholder="Escribe tus resúmenes o notas aquí..."></textarea>
             </div>
-        </div>
+        </section>
 
-        <!-- Contenedor de retroalimentación -->
-        <div id="feedback-container" class="results" style="display: none;">
-            <h3 id="feedback-title">Resultados</h3>
-            <div class="score" id="feedback-score">0/0 (0%)</div>
-            <div class="message" id="feedback-message">Mensaje de retroalimentación</div>
-            <button class="btn" onclick="restartQuiz()">🔄 Reintentar Quiz</button>
-        </div>
-
-        <!-- Botón para volver al menú (visible solo en quiz) -->
-        <button id="back-button" class="btn" style="display: none; margin: 20px auto;">
-            ← Volver al Menú
-        </button>
-    </div>
-
-    <!-- Modal "Saber más" -->
-    <div id="saberMasModal" class="modal">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">&times;</button>
-            <div class="modal-title">💡 Información Adicional</div>
-            <div id="saberMasContent">
-                <!-- Contenido dinámico -->
+        <section id="quiz-section">
+            <h2>Modo Quiz</h2>
+            <div id="current-quiz-display" class="card">
+                No hay quizzes, ¡añade uno para empezar!
             </div>
-        </div>
-    </div>
+            <input type="text" id="quiz-user-answer" placeholder="Tu respuesta">
+            <div class="quiz-controls">
+                <button id="check-quiz-answer-btn">Comprobar Respuesta</button>
+                <button id="next-quiz-btn" style="display:none;">Siguiente Pregunta</button>
+            </div>
+            <p id="quiz-feedback"></p>
+        </section>
 
-    <!-- Variables globales para JavaScript -->
-    <script>
-        let correctCount = 0;
-        let totalQuestions = 0;
-        let answeredAll = false;
-        let quizData = null;
-    </script>
+        <section id="flashcard-section">
+            <h2>Modo Flashcards</h2>
+            <div id="flashcard-front" class="card">
+                No hay flashcards, ¡añade una para empezar!
+            </div>
+            <div id="flashcard-back" class="card" style="display:none;"></div>
+            <div class="flashcard-controls">
+                <button id="show-back-btn" style="display:none;">Mostrar Reverso</button>
+                <div id="flashcard-review-btns" style="display:none;">
+                    <button id="flashcard-easy-btn" class="easy">Fácil (Dominado)</button>
+                    <button id="flashcard-hard-btn" class="hard">Difícil (Repasar)</button>
+                </div>
+                <button id="next-flashcard-btn" style="display:none;">Siguiente Flashcard</button>
+            </div>
+        </section>
 
-    <!-- Archivo JavaScript principal -->
-    <script src="main.js"></script>
+        <section id="pomodoro-section">
+            <h2>Temporizador Pomodoro</h2>
+            <div id="pomodoro-timer">25:00</div>
+            <p id="pomodoro-status">Trabajo</p>
+            <div class="pomodoro-controls">
+                <button id="start-pomodoro-btn">Iniciar</button>
+                <button id="pause-pomodoro-btn">Pausar</button>
+                <button id="reset-pomodoro-btn">Reiniciar</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
