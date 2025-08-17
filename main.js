@@ -1,8 +1,7 @@
-// --- 1. Función para cargar el menú de quizzes ---
+// --- 1. Cargar el menú de quizzes ---
 async function loadQuizMenu() {
     try {
         const response = await fetch('quizzes.json');
-        if (!response.ok) throw new Error('No se pudo cargar quizzes.json');
         const quizzes = await response.json();
         const quizList = document.querySelector('.quiz-list');
 
@@ -18,11 +17,7 @@ async function loadQuizMenu() {
         });
     } catch (error) {
         console.error('Error al cargar el menú de quizzes:', error);
-        document.querySelector('.quiz-list').innerHTML = `
-            <p style="color: #d32f2f; text-align: center; padding: 20px;">
-                ⚠️ Error al cargar los quizzes. Verifica que <strong>quizzes.json</strong> exista y tenga el formato correcto.
-            </p>
-        `;
+        document.querySelector('.quiz-list').innerHTML = `<p style="color: red;">Error: No se pudo cargar el menú. Verifica que quizzes.json exista.</p>`;
     }
 }
 
@@ -40,11 +35,6 @@ async function loadQuiz(quizId) {
         container.style.display = 'block';
         backButton.style.display = 'block';
         document.getElementById('menu-page').style.display = 'none';
-
-        // Resetear estado
-        correctCount = 0;
-        answeredAll = false;
-        feedbackContainer.style.display = 'none';
 
         // Título del quiz
         document.getElementById('quiz-title').textContent = quizData.title;
